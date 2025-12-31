@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy New Year Kittu 💙</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#000;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  overflow:hidden;
+  color:#fff;
+}
+
+/* MAIN FRAME */
+.book{
+  width:92%;
+  max-width:380px;
+  height:90vh;
+  border-radius:25px;
+  padding:20px;
+  position:relative;
+  box-shadow:0 0 25px #00fff0,0 0 60px #00fff0;
+}
+
+/* PAGE */
+.page{
+  position:absolute;
+  inset:20px;
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  animation:fade 0.8s ease;
+}
+
+.page.active{
+  display:flex;
+}
+
+/* IMAGE FRAME */
+.image-box{
+  width:100%;
+  padding:15px;
+  border-radius:20px;
+  background:rgba(0,0,0,0.6);
+  box-shadow:0 0 20px #00fff0;
+  margin-bottom:25px;
+}
+
+.image-box img{
+  width:100%;
+  border-radius:15px;
+}
+
+/* TEXT */
+h2{
+  font-size:22px;
+  margin-bottom:10px;
+  text-shadow:0 0 10px #00fff0;
+}
+
+p{
+  font-size:15px;
+  opacity:0.9;
+}
+
+/* BUTTON */
+button{
+  margin-top:20px;
+  padding:10px 30px;
+  border:none;
+  border-radius:30px;
+  background:#00fff0;
+  color:#000;
+  font-size:16px;
+  font-weight:bold;
+  box-shadow:0 0 15px #00fff0;
+  cursor:pointer;
+}
+
+/* LAST PAGE TEXT */
+.neon-text{
+  font-size:32px;
+  font-weight:800;
+  color:#00fff0;
+  text-shadow:
+    0 0 10px #00fff0,
+    0 0 20px #00fff0,
+    0 0 40px #00fff0;
+  animation:pulse 2s infinite;
+}
+
+@keyframes fade{
+  from{opacity:0; transform:scale(0.95);}
+  to{opacity:1; transform:scale(1);}
+}
+
+@keyframes pulse{
+  0%{opacity:1}
+  50%{opacity:0.6}
+  100%{opacity:1}
+}
+</style>
+</head>
+
+<body>
+
+<div class="book">
+
+  <!-- PAGE 1 -->
+  <div class="page active">
+    <div class="image-box">
+      <img src="images/kittu1.jpg">
+    </div>
+    <h2>Special Memories 💖</h2>
+    <button onclick="nextPage()">Next</button>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page">
+    <div class="image-box">
+      <img src="images/kittu2.jpg">
+    </div>
+    <h2>Beautiful Moments ✨</h2>
+    <button onclick="nextPage()">Next</button>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div class="page">
+    <div class="image-box">
+      <img src="images/kittu3.jpg">
+    </div>
+    <h2>Forever Smiles 😊</h2>
+    <button onclick="nextPage()">Next</button>
+  </div>
+
+  <!-- PAGE 4 -->
+  <div class="page">
+    <div class="image-box">
+      <img src="images/kittu4.jpg">
+    </div>
+    <h2>Golden Times 🌸</h2>
+    <button onclick="nextPage()">Next</button>
+  </div>
+
+  <!-- PAGE 5 -->
+  <div class="page">
+    <div class="image-box">
+      <img src="images/kittu5.jpg">
+    </div>
+    <h2>Heart Touching 💙</h2>
+    <button onclick="nextPage()">Next</button>
+  </div>
+
+  <!-- PAGE 6 -->
+  <div class="page">
+    <div class="image-box">
+      <img src="images/kittu6.jpg">
+    </div>
+    <div class="neon-text">Happy New Year 2026 🎆</div>
+    <p style="margin-top:15px;">Always keep smiling 😄</p>
+  </div>
+
+</div>
+
+<script>
+let pages=document.querySelectorAll('.page');
+let current=0;
+
+function nextPage(){
+  pages[current].classList.remove('active');
+  current++;
+  if(current>=pages.length) current=pages.length-1;
+  pages[current].classList.add('active');
+}
+</script>
+
+</body>
+</html>
+

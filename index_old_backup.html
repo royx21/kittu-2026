@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kittu Greeting Book</title>
+<style>
+body {
+/* General page styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #111;  /* Dark premium background */
+  color: #000;
+}
+
+/* Page container */
+.page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Image styling */
+.page img {
+  max-width: 80%;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 255, 240, 0.5);
+  margin-bottom: 20px;
+}
+
+/* Text content for all pages */
+.page p, .page h2, .page h3 {
+  font-size: 28px;
+  line-height: 1.6;
+  text-align: center;
+  color: #00fff0;
+  text-shadow: 0 0 5px #00fff0, 0 0 10px #00fff0;
+  margin: 10px 0;
+}
+
+/* Button styling */
+button {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  background: #00fff0;
+  color: #111;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 0 15px #00fff0;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+button:hover {
+  transform: scale(1.1);  box-shadow: 0 0 25px #00fff0;
+}
+
+/* Neon text for last page */
+.neon-text {
+  font-size: 120px;   /* Adjust size */
+  font-weight: bold;
+  color: #00fff0;
+  text-align: center;
+  text-shadow: 
+      0 0 5px #00fff0,
+      0 0 10px #00fff0,
+      0 0 20px #00fff0,
+      0 0 40px #00fff0,
+      0 0 80px #00fff0;
+  margin-top: 150px;
+  animation: flicker 1.5s infinite alternate;
+9}
+
+@keyframes flicker {
+  0% { text-shadow: 0 0 5px #00fff0, 0 0 10px #00fff0; }
+  50% { text-shadow: 0 0 20px #00fff0, 0 0 40px #00fff0; }
+  100% { text-shadow: 0 0 5px #00fff0, 0 0 10px #00fff0; }
+}
+
+  /* Existing CSS yahan hoga */
+
+    /* Neon Happy New Year text ke liye naya CSS */
+    .neon-text {
+      font-size: 120px;   /* Text ka size bada kar diya */
+      font-weight: bold;
+      color: #00fff0;
+      text-align: center;
+      text-shadow: 
+          0 0 5px #00fff0,
+          0 0 10px #00fff0,
+          0 0 20px #00fff0,
+          0 0 40px #00fff0,
+          0 0 80px #00fff0;
+      margin-top: 150px;
+      animation: flicker 1.5s infinite alternate;
+    }
+
+    @keyframes flicker {
+      0% { text-shadow: 0 0 5px #00fff0, 0 0 10px #00fff0; }
+      50% { text-shadow: 0 0 20px #00fff0, 0 0 40px #00fff0; }
+      100% { text-shadow: 0 0 5px #00fff0, 0 0 10px #00fff0; }
+    }
+  
+
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+  20%, 22%, 24%, 55% { opacity: 0.7; }
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: scale(0.95);}
+  100% { opacity: 1; transform: scale(1);}
+}
+</style>
+</head>
+<body>
+
+<!-- Page 1 -->
+<div class="page active" id="page1">
+  <img src="images/kittu.jpg" alt="Page 1">
+  <p style="font-size:1.5em;">Hello Kittu! This is your special greeting.</p>
+  <button onclick="turnPage(2)">Next Page</button>
+</div>
+
+<!-- Page 2 -->
+<div class="page" id="page2">
+  <img src="images/kittu3.jpg" alt="Page 2">
+  <p style="font-size:1.5em;">May your year be filled with joy and success!</p>
+  <button onclick="turnPage(3)">Next Page</button>
+</div>
+
+<!-- Page 3 -->
+<div class="page" id="page3">
+  <img src="images/kittu4.jpg" alt="Page 3">
+  <p style="font-size:1.5em;">Wishing you moments of happiness and love.</p>
+  <button onclick="turnPage(4)">Next Page</button>
+</div>
+
+<!-- Page 4 -->
+<div class="page" id="page4">
+  <img src="images/kittu5.jpg" alt="Page 4">
+  <p style="font-size:1.5em;">Open the next page for a special surprise!</p>
+  <button onclick="turnPage(5)">Next Page</button>
+</div>
+
+<!-- Page 5 -->
+<div class="page" id="page5">
+  <img src="images/kittu6.jpg" alt="Page 5">
+  <p style="font-size:1.5em;">Remember all the beautiful moments of the past year.</p>
+  <button onclick="turnPage(6)">Open</button>
+</div>
+
+<!-- Page 6 - Neon Happy New Year -->
+<dbiv class="page" id="page6">
+    <div class="neon-text">Happy New Year 2026</div>
+</div>
+
+<script>
+// Page navigation
+function turnPage(pageNum) {
+  const pages = document.querySelectorAll('.page');
+  pages.forEach(p => p.classList.remove('active'));
+  document.getElementById('page' + pageNum).classList.add('active');
+}9
+</script>
+
+</body>
+</html>
+
